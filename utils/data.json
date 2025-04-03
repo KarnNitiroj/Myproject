@@ -1,0 +1,28 @@
+{
+    "baseURL": "http://automationexercise.com",
+
+    "register":
+    {
+        "name":"testnaja",
+        "email":"testnaja224@example.com",
+        "title":"Mr",
+        "password":"Test123",
+        "birthDay": "10",
+        "birthMonth": "May",
+        "birthYear": "1995"
+    },
+
+    "information":
+    {
+        "firstName":"John",
+        "lastName":"Doe",
+        "company":"Test Company",
+        "address1":"123 Main St",
+        "address2":"Apt 4B",
+        "country":"United States",
+        "state":"New York",
+        "city":"New York",
+        "zipCode":"10001",
+        "mobileNumber":"1234567890"
+    }
+}
