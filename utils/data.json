@@ -4,7 +4,7 @@
     "register":
     {
         "name":"testnaja",
-        "email":"testnaja224@example.com",
+        "email":"testnaja695@example.com",
         "title":"Mr",
         "password":"Test123",
         "birthDay": "10",
@@ -24,5 +24,24 @@
         "city":"New York",
         "zipCode":"10001",
         "mobileNumber":"1234567890"
+    },
+
+    "login":
+    {
+        "email": "testnaja234@example.com",
+        "password":"Test123",
+        "name":"testnaja"
+    },
+
+    "loginFail":
+    {
+        "email": "test@gmailcom",
+        "password":"test123"
+    },
+
+    "registerFail":
+    {
+        "name": "testfailnaja",
+        "email": "test1234@gmail.com"
     }
 }

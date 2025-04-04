@@ -5,6 +5,7 @@ export class HomePageCustomer {
   readonly deleteAccountButton: Locator;
   readonly titleDeleteAccountCompleat: Locator;
   readonly continueButton: Locator;
+  readonly logoutButton: Locator;
 
 
   constructor(page: Page) {
@@ -12,6 +13,7 @@ export class HomePageCustomer {
     this.deleteAccountButton = page.locator("a[href='/delete_account']");
     this.titleDeleteAccountCompleat = page.getByText("Account Deleted!");
     this.continueButton = page.locator(".btn.btn-primary");
+    this.logoutButton = page.locator("a[href='/logout']");
   }
 
   async verifyUserNameCustomer(Name: string) {
@@ -27,5 +29,8 @@ export class HomePageCustomer {
   }
   async clickContinueButton() {
     await this.continueButton.click();
+  }
+  async clickLogoutButton() {
+    await this.logoutButton.click();
   }
 }

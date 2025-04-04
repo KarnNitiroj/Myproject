@@ -10,6 +10,8 @@ export class SignupAndLoginPage {
   readonly loginTextFieldEmail: Locator;
   readonly loginTextFieldPassword: Locator;
   readonly loginButton: Locator;
+  readonly errorMessageLogin: Locator;
+  readonly errorMessageEmailAlreadyExist: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -21,17 +23,23 @@ export class SignupAndLoginPage {
     this.loginTextFieldEmail = page.locator("input[data-qa='login-email']");
     this.loginTextFieldPassword = page.getByPlaceholder("Password");
     this.loginButton = page.locator("button[data-qa='login-button']");
+    this.errorMessageLogin = page.getByText(
+      "Your email or password is incorrect!"
+    );
+    this.errorMessageEmailAlreadyExist = page.getByText(
+      "Email Address already exist!"
+    );
   }
 
   async verifyNewUserSignupIsVisible() {
     await expect(this.titleSignup).toBeVisible();
   }
-  async inputNameInSignupTextFieldName (name: string) {
-    expect (this.signupTextFieldName).toBeVisible();
+  async inputNameInSignupTextFieldName(name: string) {
+    expect(this.signupTextFieldName).toBeVisible();
     await this.signupTextFieldName.fill(name);
   }
   async inputEmailInSignupTextFieldEmail(email: string) {
-    expect (this.signupTextFieldEmail).toBeVisible();
+    expect(this.signupTextFieldEmail).toBeVisible();
     await this.signupTextFieldEmail.fill(email);
   }
   async clickSignupButton() {
@@ -48,5 +56,11 @@ export class SignupAndLoginPage {
   }
   async clickLoginButton() {
     await this.loginButton.click();
+  }
+  async verifyErrorMessageLoginIsVisible() {
+    await expect(this.errorMessageLogin).toBeVisible();
+  }
+  async verifyErrorMessageEmailAlreadyExistIsVisible() {
+    await expect(this.errorMessageEmailAlreadyExist).toBeVisible();
   }
 }
